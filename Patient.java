@@ -29,26 +29,29 @@ public class Patient {
 	}
 	
 	public void printPatientBackwards() {
-		System.out.println("This patient is called: " + this.name + ". They are " + this.age + " years old. Their illness is: " + this.illness + ".");
-		if (this.previousPatient != null) {
-			this.previousPatient.printPatientBackwards();
+		if (this.nextPatient != null) {
+			this.nextPatient.printPatientBackwards();
+		} else {
+			for (Patient p = this; p != null; p = p.previousPatient) {
+				System.out.println("This patient is called: " + p.name + ". They are " + p.age + " years old.");
+			}
 		}
 	}
 	
 	public int queueLength() {
-		//recursive
+		/*recursive
 		if (this.nextPatient == null){
 			return 1;
 		} else {
 			return 1 + this.nextPatient.queueLength();
-		}
+		}*/
 		
 		//iterative 
-		/*int count = 1;
-		for (Patient p = this; p.nextPatient != null; p = p.nextPatient) {
+		int count = 0;
+		for (Patient p = this; p != null; p = p.nextPatient) {
 			count++;
 		}
-		return count;*/
+		return count;
 	}
 	
 	public void deletePatient(String patientName) {
@@ -57,7 +60,9 @@ public class Patient {
 			return;
 		} else if (this.nextPatient.name.equals(patientName)) {
 			this.nextPatient = this.nextPatient.nextPatient;
-			this.nextPatient.previousPatient = this.nextPatient.previousPatient.previousPatient;
+			if (this.nextPatient != null) {
+				this.nextPatient.previousPatient = this.nextPatient.previousPatient.previousPatient;
+			}
 			System.out.println(patientName + " has been deleted.");
 		} else {
 			this.nextPatient.deletePatient(patientName);
