@@ -13,14 +13,14 @@ public class CircularHospitalManager {
 		CircularPatient p5 = new CircularPatient("Cath", 30);
 		patientListStart.addPatient(p5);
 		
-		
+
 		patientListStart.printList();
 		System.out.println();
-
 		patientListStart.deletePatient("Jane");
 		System.out.println();
 		patientListStart.printList();
 		System.out.println();
+		
 		patientListStart.deletePatient("Sam");
 		System.out.println();
 		patientListStart.printList();
@@ -28,6 +28,15 @@ public class CircularHospitalManager {
 		patientListStart.deletePatient("John");
 		System.out.println();
 		patientListStart.printList();
+		System.out.println();
+		
+		CircularPatient p6 = new CircularPatient("Mike", 50);
+		patientListStart.addPatient(p6);
+		
+		patientListStart.printList();
+		System.out.println();
+		patientListStart.deletePatient("Jane");
+		
 	}
 	
 	public static void main(String[] args) {
