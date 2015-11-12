@@ -14,34 +14,36 @@ public class HospitalManager {
 		patientListStart.addPatient(p5);
 		
 		
-		/*patientListStart.printPatientForwards();		
+		patientListStart.printPatientForwards();		
 		System.out.println();		
 		System.out.println(patientListStart.queueLength());
 		patientListStart.deletePatient("Adam");
 		System.out.println(patientListStart.queueLength());
-		patientListStart.deletePatient("Cath");
+		patientListStart.deletePatient("Jane");
 		System.out.println(patientListStart.queueLength());
 		patientListStart = p2;
+		patientListStart.deletePatient("John");
 		patientListStart.printPatientForwards();
-		System.out.println(patientListStart.queueLength());*/
+		System.out.println(patientListStart.queueLength());
 		
-		patientListStart.printPatientForwards();
+		
 		System.out.println("*****");		
 		p5.printPatientBackwards();
 		System.out.println("*****");
 		patientListStart.deletePatient("Sam");
 		patientListStart.deletePatient("Adam");
 		patientListStart.printPatientForwards();
-		System.out.println("*****");		
-		p5.printPatientBackwards();
+		System.out.println("*****");	
+		patientListStart.printPatientBackwards();
 		Patient p6 = new Patient("Dave", 54, "T.B.");
 		patientListStart.addPatient(p6);
 		patientListStart.deletePatient("Sam");
 		patientListStart.printPatientForwards();
 		System.out.println("*****");
-		p6.printPatientBackwards();
-
-
+		patientListStart.printPatientBackwards();
+		
+		
+		
 		
 	}
 	
